@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.body {
+    position: relative;
+    width: 100%;
+}
+
+header {
+    top: 0;
+    overflow: hidden;
+    height: 300px;
+}
+
+header,
+header>img {
+    position: absolute;
+    width: 100%;
+}
+
+header>img {
+    opacity: 0;
+    pointer-events: none;
+    height: 100%;
+    object-fit: cover;
+    transition: .2s ease;
+}
+
+main {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #161722;
+    min-height: 800px;
+    height: 100vh;
+    transition: .2s ease;
+}
+
+.todo__container {
+    margin: 80px 0 50px;
+    max-width: 540px;
+    min-width: 320px;
+    width: 90%;
+    color: #fff;
+    position: relative;
+    z-index: 3;
+}
+
+.todo__container__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo__container__head h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-weight: 700;
+}
+
+.todo__container__head button>img:last-child {
+    width: 85%;
+    height: 85%;
+}
+
+.todo__container__head button>img:first-child {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.todo__container__head button {
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo__container__head button>img {
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .15s ease;
+    object-position: center center;
+    object-fit: contain;
+}
+
+.todo__container__input {
+    margin: 40px 0 25px;
+    width: 100%;
+    position: relative;
+}
+
+.todo__container__input span {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.todo__container__input input,
+.todo__container__input input.light {
+    box-shadow: 0 19px 50px rgb(0 0 0 / 20%),
+        0 15px 12px rgb(0 0 0 / 10%);
+}
+
+.todo__container__input input {
+    padding: 5px 25px 0;
+    border-radius: 5px;
+    border: none;
+    background: #25273c;
+    height: 65px;
+    width: 100%;
+    color: #cacde8;
+    font-size: 1em;
+    transition: .2s ease;
+    outline: none;
+}
+
+.todo__container__input button {
+    display: none;
+}
+
+.tasks__content {
+    padding: 15px;
+}
+
+.tasks__content .no__tasks__message {
+    color: #7a7a7e;
+    margin-bottom: 15px;
+    display: block;
+    padding-top: 10px;
+}
+
+.tasks__content .task__box {
+    background-color: #25273c;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid #4b4d5e;
+    color: #DFE2FE;
+}
+
+.tasks__content .task__box.finished {
+    text-decoration: line-through;
+}
+
+.task__stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.task__stats .tasks__completed span,
+.task__stats .tasks__count span {
+    color: #fff;
+    padding: 4px 7px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.task__stats .tasks__completed span {
+    background-color: #E91E63;
+}
+
+.task__stats .tasks__count span {
+    background-color: #03A9F4
+}
+
+.clear__all,
+.finish__all {
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        height: 200px;
+    }
+
+    header>img.desktop-d {
+        display: none;
+        opacity: 0;
+    }
+
+    header>img.mobile-d {
+        display: inline;
+        display: initial;
+        opacity: 1;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .task__stats {
+        flex-flow: column wrap;
+        gap: 1rem;
+    }
+
+    .todo__container__head h1 {
+        font-size: 20px;
+    }
+
+    .todo__container__head {
+        justify-content: space-around;
+    }
+}
+
+/* toggle dark theme */
+
+.tasks__content.light {
+    box-shadow: 0 25px 50px rgb(0 0 0 / 10%), 0 5px 30px rgb(0 0 0 / 20%);
+}
+.task__stats.light {
+    border-top: 1px solid #d2d3db;
+}
+.plus.light {
+    color: #484b6a;
+}
+
+.no__tasks__message.light {
+    color: #7a7a7e;
+}
+
+main.light , .task__box.light , .tasks__content .task__box.light , .tasks__content.light , .todo__container__input .input.light , .task__stats.light{
+    background: #fafafa;
+    color: #484b6a;
+}

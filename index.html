@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <div class="body">
+        <header>
+            <img class="desktop-d" id='dd' src="./images/bg-desktop-dark.jpg" alt="bg-desktop-dark" style="opacity: 1;">
+
+            <img class="desktop-l" id='dl' src="./images/bg-desktop-light.jpg" alt="bg-desktop-light">
+        </header>
+        <main>
+            <div class="todo__container">
+                <div class="todo__container__head">
+                    <h1>Todo</h1>
+                    <button id='toggler'>
+                        <img class="sun" src="./images/icon-sun.svg" alt="iconmoon" style="opacity: 1;">
+                    </button>
+                </div>
+                <form name="form" class="todo__container__input">
+                    <label>
+                        <input class="input" maxlength="40" required placeholder="Create a new todo..." type="text" value="">
+                    </label>
+                    <span class="plus">+</span>
+                </form>
+                <div class="tasks__content">
+                </div>
+                <div class="task__stats">
+                    <div class="tasks__count">
+                        Tasks <span>0</span>
+                    </div>
+                    <div class="clear__all">ClearAll</div>
+                    <div class="finish__all">FinishAll</div>
+                    <div class="tasks__completed">
+                        Completed <span>0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
