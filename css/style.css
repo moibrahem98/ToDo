@@ -203,7 +203,7 @@ main {
     padding: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 250px) {
     header {
         height: 200px;
     }
@@ -214,9 +214,8 @@ main {
     }
 
     header>img.mobile-d {
-        display: inline;
-        display: initial;
-        opacity: 1;
+        display: block;
+        opacity: 1 !important;
     }
 
 }
