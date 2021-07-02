@@ -34,7 +34,7 @@ addBtn.onclick = function () {
         let text = document.createTextNode(theInput.value);
 
         // add text to elements
-        imgDelete.src = "/images/icon-cross.svg";
+        imgDelete.src = "images/icon-cross.svg";
         imgDelete.className = "delete";
         mainSpan.appendChild(imgDelete);
         mainSpan.appendChild(text);
@@ -75,6 +75,9 @@ document.addEventListener('click', function (e) {
 
     // calc tasks
     calcTasks();
+
+    // check dark mode
+    checkMode();
 
 });
 
@@ -121,6 +124,14 @@ toggler.onclick = function () {
     document.querySelector('.todo__container__input .input').classList.toggle('light');
     document.querySelectorAll('.task__box').forEach(e => e.classList.toggle('light'));
     addBtn.classList.add('light');
+
+    // check dark or light mode
+    checkMode();
 }
 
 
+function checkMode() {
+    if ((document.querySelector('.tasks__content').classList.contains('light'))) {
+        document.querySelectorAll('.task__box').forEach(e => e.classList.add('light'))
+    }
+}
