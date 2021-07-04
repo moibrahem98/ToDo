@@ -11,7 +11,8 @@ let clear__all = document.querySelector('.clear__all');
 // focus on input filed 
 
 window.onload = function () {
-    theInput.focus()
+    theInput.focus();
+    createNoTasks();
 }
 
 // add btn function 
@@ -120,6 +121,7 @@ let toggler = document.getElementById('toggler');
 toggler.onclick = function () {
     document.querySelector('main').classList.toggle('light');
     document.querySelector('.tasks__content').classList.toggle('light');
+    document.querySelector('.no__tasks__message').classList.toggle('light');
     document.querySelector('.task__stats').classList.toggle('light');
     document.querySelector('.todo__container__input .input').classList.toggle('light');
     document.querySelectorAll('.task__box').forEach(e => e.classList.toggle('light'));
